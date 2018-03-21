@@ -19,25 +19,24 @@ class GroceryListItem extends React.Component {
 
         // `state` is just an object literal
         this.state = {
-            done: false
+            hoverToggle: false
         };
     }
 
-    // When a list item is clicked, we will toggle the `done`
+    // When a list item is clicked, we will toggle the `hoverToggle`
     // boolean, and our component's `render` method will run again
     onListItemHover() {
         this.setState({
-            done: !this.state.done
+            hoverToggle: !this.state.hoverToggle
         });
-        console.log(this.props.grocery);
-        this.render();
+        console.log(`flipped 'hoverToggle' on ${this.props.grocery} to ${this.state.hoverToggle}`);
     }
 
     render() {
         // Making the style conditional on our `state` lets us 
         // update it based on user interactions.
         var style = {
-            textDecoration: this.state.done ? 'bold' : 'none'
+            textDecoration: this.state.hoverToggle ? 'bold' : 'none'
         };
 
         // You can pass inline styles using React's `style` attribute to any component
