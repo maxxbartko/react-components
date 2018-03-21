@@ -5,8 +5,6 @@ var App = () => (
     </div>
 );
 
-// Update our `GroceryList` to use the new `GroceryListItem` component
-// This can still be a stateless function component!
 var GroceryList = (props) => (
     <ul>
         {props.groceries.map(grocery =>
@@ -31,6 +29,8 @@ class GroceryListItem extends React.Component {
         this.setState({
             done: !this.state.done
         });
+        console.log(this.props.grocery);
+        this.render();
     }
 
     render() {
